@@ -13,7 +13,7 @@ import { ClientService } from './client/client.service';
 import { CatalogueService } from './catalogue/catalogue.service';
 import { LoginComponent } from './login/login.component';
 import { LoginService } from './login.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxsModule } from '@ngxs/store';
 
 const routes: Routes = [
@@ -48,7 +48,8 @@ const routes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(routes),
     NgxsModule.forRoot([StoreState]),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [ LoginService,
     {

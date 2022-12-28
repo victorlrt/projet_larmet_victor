@@ -1,8 +1,9 @@
-<div>
-  <label for="login">Login : </label>
-  <input type="text" [(ngModel)]="login">
+<div class="loginForm" *ngIf="!isConnected">
 
-  <label for="password">Mot de passe : </label>
-  <input type="text" [(ngModel)]="password">
-  <button (click)="signin()">SUBMIT</button>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <input placeholder="Pseudo" formControlName="pseudo">
+      <input placeholder="Password" formControlName="password" type="password">
+    <button type="submit">Login</button>
+  </form>
+
 </div>
