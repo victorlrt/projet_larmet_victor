@@ -21,14 +21,11 @@ export class ClientService {
 
 
   getAllClients(): Observable<Client[]> {
-    return this.http.get<Client[]>(this.apiUrl+this.apiTarget);
+    return this.http.get<Client[]>(this.apiUrl+"client");
   }
 
   postClient(client: Client): Observable<Client> {
-    client.id = this.clients.length + 1;
-    console.log(client);
-    console.log(this.apiUrl+this.apiTarget);
-
+    console.log("postClient");
     return this.http.post<Client>(this.apiUrl+this.apiTarget, client);
   }
 

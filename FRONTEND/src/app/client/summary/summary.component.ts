@@ -10,7 +10,7 @@ export class SummaryComponent {
 
   @Input() lastname : string = "";
   @Input() firstname : string = "";
-  @Input() zipCode : string = "";
+  @Input() zipcode: string = "";
   @Input() tel : string = "";
   @Input() email : string = "";
   @Input() gender : string = "";

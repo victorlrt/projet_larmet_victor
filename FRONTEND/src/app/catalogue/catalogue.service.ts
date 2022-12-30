@@ -23,7 +23,7 @@ export class CatalogueService {
   };
 
   getCatalogue(): Observable<Mushroom[]> {
-    return this.http.get<Mushroom[]>(this.env.catalogue);
+    return this.http.get<Mushroom[]>(this.apiUrl+"catalogue");
   }
 
   getCatalogueDistinctTypeToxicity(): Observable<String[]> {

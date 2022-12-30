@@ -23,14 +23,13 @@ export class FormComponent {
   ngPassword : string = "";
   ngPasswordCheck : string = "";
 
-  showSummary = false
+  showSummary = false;
 
-  client: Client = new Client();
 
   clientForm = new FormGroup({
     lastname: new FormControl('', [Validators.required, Validators.minLength(2)]),
     firstname: new FormControl('', [Validators.required, Validators.minLength(2)]),
-    zipCode: new FormControl('', [Validators.required, Validators.minLength(5)]),
+    zipcode: new FormControl('', [Validators.required, Validators.minLength(5)]),
     tel: new FormControl('', [Validators.required, Validators.minLength(10)]),
     email: new FormControl('', [Validators.required, Validators.email]),
     gender : new FormControl('', [Validators.required]),
@@ -44,27 +43,29 @@ export class FormComponent {
     this.showSummary = val
   }
 
+  client: Client | undefined ;
   // create object Client
   createClient() {
-    this.client.lastname = this.clientForm.value.lastname!;
-    this.client.firstname = this.clientForm.value.firstname!;
-    this.client.zipCode = this.clientForm.value.zipCode!;
-    this.client.tel = this.clientForm.value.tel!;
-    this.client.email = this.clientForm.value.email!;
-    this.client.gender = this.client.gender;
-    this.client.login = this.clientForm.value.login!;
-    this.client.password = this.clientForm.value.password!;
+    this.client = new Client(0, this.clientForm.value.lastname!, this.clientForm.value.firstname!, this.clientForm.value.zipcode!,
+      this.clientForm.value.tel!, this.clientForm.value.email!, this.clientForm.value.gender!, this.clientForm.value.login!, this.clientForm.value.password!);
+      console.log(this.client);
+    // this.client.id = 0;
+    // this.client.lastname = this.clientForm.value.lastname!;
+    // this.client.firstname = this.clientForm.value.firstname!;
+    // this.client.zipcode= this.clientForm.value.zipcode!;
+    // this.client.tel = this.clientForm.value.tel!;
+    // this.client.email = this.clientForm.value.email!;
+    // this.client.gender = this.client.gender;
+    // this.client.login = this.clientForm.value.login!;
+    // this.client.password = this.clientForm.value.password!;
 
-    this.clientService.postClient(this.client).subscribe(
-      (client) => {
-        this.clientService.clients.push(client);
-      }
-    );
+
+    this.clientService.postClient(this.client);
+    // .subscribe(
+    //   (client) => {
+    //     this.clientService.clients.push(client);
+    //   }
+    // );
   }
-
-
-  // send object to server
-  // display message "client created"
-
 
 }

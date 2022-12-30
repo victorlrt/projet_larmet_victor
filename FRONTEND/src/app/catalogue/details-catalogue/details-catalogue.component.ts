@@ -16,10 +16,10 @@ import { AddMushroom } from 'src/app/core/model/store';
 export class DetailsCatalogueComponent implements OnInit {
 
   mushroom: Mushroom | undefined;
-  constructor(private mushService: CatalogueService, private route: ActivatedRoute, private store: Store) { } 
+  constructor(private mushService: CatalogueService, private route: ActivatedRoute, private store: Store) { }
 
   ngOnInit(): void {
-    
+
     this.mushService.getCatalogue().subscribe(
       data => {
         this.mushroom = data.find(p => p.id == this.route.snapshot.params['id']);
@@ -30,6 +30,7 @@ export class DetailsCatalogueComponent implements OnInit {
 
   addMushroomToStore(mushroom: Mushroom) : void {
     this.store.dispatch(new AddMushroom(mushroom));
+
   }
 
 }

@@ -8,7 +8,7 @@
         </label> <br>
         <label>Firstname : <input type="text" placeholder="Firstname" formControlName="firstname" appCheckFormString />
         </label> <br>
-        <label>Zip code : <input type="text" placeholder="Zip code" formControlName="zipCode" appCheckFormNumber />
+        <label>Zip code : <input type="text" placeholder="Zip code" formControlName="zipcode" appCheckFormNumber />
         </label> <br>
         <label>Telephone : <input type="tel" placeholder="Telephone" formControlName="tel" formControlName="tel" appCheckFormNumber /> </label>
         <br>
@@ -31,7 +31,7 @@
     </form>
 
       <div>
-        <button (click)="showSummary=true">Send</button>
+        <!-- <button (click)="showSummary=true">Send</button> -->
         <button (click)="createClient()">Send</button>
 
       </div>
@@ -39,7 +39,7 @@
     </div>
 
     <ng-container *ngIf="showSummary ; showSummary">
-      <!-- <app-component-summary showSummary [lastname]="ngLastname" [firstname]="ngFirstname" [zipCode]="ngZipCode"
+      <!-- <app-component-summary showSummary [lastname]="ngLastname" [firstname]="ngFirstname" [zipcode]="ngZipCode"
         [tel]="ngTel" [email]="ngEmail" [gender]="ngGender" [login]="ngLogin" [password]="ngPassword"
         [passwordCheck]="ngPasswordCheck" (change)="clicChange($event)">
 
