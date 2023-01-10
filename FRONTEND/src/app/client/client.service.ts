@@ -11,23 +11,42 @@ export class ClientService {
 
 
   constructor(private http: HttpClient) {
-
   }
+
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  };
 
 
   apiUrl: string = environment.api;
-  apiTarget: string = "client";
   clients : Client[] = [];
 
 
-  getAllClients(): Observable<Client[]> {
+  getAll(): Observable<Client[]> {
+    console.log("get all");
     return this.http.get<Client[]>(this.apiUrl+"client");
   }
 
-  postClient(client: Client): Observable<Client> {
-    console.log("postClient");
-    return this.http.post<Client>(this.apiUrl+this.apiTarget, client);
+  get(client: Client): Observable<Client[]> {
+    console.log("get specific");
+    return this.http.get<Client[]>(this.apiUrl+"client/"+client.id);
   }
 
+  postNewClient(client: Client): Observable<Client> {
+    console.log("post");
+    return this.http.post<Client>(this.apiUrl+"client", client);
+  }
+
+  put(client: Client): Observable<Client> {
+    console.log("put");
+    return this.http.put<Client>(this.apiUrl+"client/"+client.id, client, this.httpOptions);
+  }
+
+  delete(client: Client): Observable<Client> {
+    console.log("delete");
+    return this.http.delete<Client>(this.apiUrl+"client/"+client.id);
+  }
 
 }

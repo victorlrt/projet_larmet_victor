@@ -1,9 +1,9 @@
 <div class="loginForm" *ngIf="!isConnected">
 
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="loginForm" >
       <input placeholder="Pseudo" formControlName="pseudo">
       <input placeholder="Password" formControlName="password" type="password">
-    <button type="submit">Login</button>
+    <button type="submit" (click)="loginClient()" >Login</button>
   </form>
 
 </div>

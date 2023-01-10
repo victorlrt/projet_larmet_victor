@@ -44,28 +44,15 @@ export class FormComponent {
   }
 
   client: Client | undefined ;
+
   // create object Client
   createClient() {
     this.client = new Client(0, this.clientForm.value.lastname!, this.clientForm.value.firstname!, this.clientForm.value.zipcode!,
       this.clientForm.value.tel!, this.clientForm.value.email!, this.clientForm.value.gender!, this.clientForm.value.login!, this.clientForm.value.password!);
       console.log(this.client);
-    // this.client.id = 0;
-    // this.client.lastname = this.clientForm.value.lastname!;
-    // this.client.firstname = this.clientForm.value.firstname!;
-    // this.client.zipcode= this.clientForm.value.zipcode!;
-    // this.client.tel = this.clientForm.value.tel!;
-    // this.client.email = this.clientForm.value.email!;
-    // this.client.gender = this.client.gender;
-    // this.client.login = this.clientForm.value.login!;
-    // this.client.password = this.clientForm.value.password!;
 
 
-    this.clientService.postClient(this.client);
-    // .subscribe(
-    //   (client) => {
-    //     this.clientService.clients.push(client);
-    //   }
-    // );
+    this.clientService.postNewClient(this.client).subscribe();
   }
 
 }

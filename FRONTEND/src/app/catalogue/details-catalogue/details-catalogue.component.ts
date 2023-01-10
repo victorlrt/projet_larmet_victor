@@ -20,7 +20,7 @@ export class DetailsCatalogueComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.mushService.getCatalogue().subscribe(
+    this.mushService.getAll().subscribe(
       data => {
         this.mushroom = data.find(p => p.id == this.route.snapshot.params['id']);
       }

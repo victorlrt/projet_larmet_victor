@@ -20,3 +20,21 @@ INSERT INTO public.mushroom(name,edible,poisonous,img,description,toxicity) VALU
 INSERT INTO public.mushroom(name,edible,poisonous,img,description,toxicity) VALUES ('Girollle','true','false','https://upload.wikimedia.org/wikipedia/commons/8/86/Cantharellus_cibarius1.jpg','Gyromitra esculenta is an ascomycete fungus from the genus Gyromitra, widely distributed across Europe and North America. It normally fruits in sandy soils under coniferous trees in spring and early summer.','None');
 INSERT INTO public.mushroom(name,edible,poisonous,img,description,toxicity) VALUES ('Pleurote','true','false','https://upload.wikimedia.org/wikipedia/commons/9/94/Oyster_mushoom_fells.jpg','Pleurote (Pleurotus ostreatus) is a mushroom that is found in Europe, North America, and Asia. It is one of the most toxic mushrooms in the world, and is responsible for many deaths. It is also known as the death cap, destroying angel, devil''s mushroom, or inedible amanita.','None');
 INSERT INTO public.mushroom(name,edible,poisonous,img,description,toxicity) VALUES ('Langue de boeuf','true','false','https://upload.wikimedia.org/wikipedia/commons/3/3f/2008-08-08_Fistulina_hepatica_crop.jpg','Fistulina hepatica is an unusual bracket fungus classified in the Agaricales, that is commonly seen in Britain, but can be found in other parts of the world. It is a saprobic fungus that grows on dead wood, and is often found on the trunks of trees.','None');
+
+
+CREATE table IF NOT EXISTS public.client (
+	id SERIAL primary key ,
+	lastname varchar(20) not null,
+	firstname varchar(20) not null,
+	zipcode varchar(10) not null,
+	tel varchar(10) not null,
+	email varchar(50) not null,
+	gender varchar(10) not null,
+	login varchar(30) unique not null,
+	"password" varchar(30) not null
+	
+);
+
+INSERT INTO client
+(lastname, firstname, zipcode, tel, email, gender, login, password)
+VALUES('test', 'test', 'test', 'test', 'test', 'test', 'test', 'test');

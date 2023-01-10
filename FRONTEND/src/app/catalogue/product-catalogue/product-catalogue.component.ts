@@ -42,13 +42,13 @@ export class ProductCatalogueComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.catalogue$ = this.tsCatalogue.getCatalogue();
-    this.uniqueData$ = this.tsCatalogue.getCatalogueDistinctTypeToxicity();
+    this.catalogue$ = this.tsCatalogue.getAll();
+    this.uniqueData$ = this.tsCatalogue.getAllDistinctTypeToxicity();
   }
 
 
   doFilterMushroomEdible(): void {
-    this.catalogue$ = this.tsCatalogue.getCatalogue().pipe(
+    this.catalogue$ = this.tsCatalogue.getAll().pipe(
       map((
         listProducts: Mushroom[]) => listProducts.filter(
 
@@ -70,7 +70,7 @@ export class ProductCatalogueComponent implements OnInit {
   }
 
   doFilterMushroomName(): void {
-    this.catalogue$ = this.tsCatalogue.getCatalogue().pipe(
+    this.catalogue$ = this.tsCatalogue.getAll().pipe(
       map((
         listProducts: Mushroom[]) => listProducts.filter(
 
@@ -89,7 +89,7 @@ export class ProductCatalogueComponent implements OnInit {
   }
 
   doFilterDistinctToxicity(): void {
-    this.catalogue$ = this.tsCatalogue.getCatalogue().pipe(
+    this.catalogue$ = this.tsCatalogue.getAll().pipe(
       map((
         listProducts: Mushroom[]) => listProducts.filter(
           mushroom => {

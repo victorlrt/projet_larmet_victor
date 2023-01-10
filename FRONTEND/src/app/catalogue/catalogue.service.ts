@@ -22,20 +22,41 @@ export class CatalogueService {
     })
   };
 
-  getCatalogue(): Observable<Mushroom[]> {
+  getAll(): Observable<Mushroom[]> {
+    console.log("get all");
     return this.http.get<Mushroom[]>(this.apiUrl+"catalogue");
   }
 
-  getCatalogueDistinctTypeToxicity(): Observable<String[]> {
-    return this.http.get<Mushroom[]>(this.env.catalogue).pipe(map(
+  get(mushroom: Mushroom): Observable<Mushroom[]> {
+    console.log("get specific");
+    return this.http.get<Mushroom[]>(this.apiUrl+"catalogue/"+mushroom.id);
+  }
+
+  getAllDistinctTypeToxicity(): Observable<String[]> {
+    return this.http.get<Mushroom[]>(this.apiUrl+"catalogue").pipe(map(
       (listProducts: Mushroom[]) => listProducts.map(
         (mushroom: Mushroom) => mushroom.toxicity).filter(
           (value, index, self) => self.indexOf(value) === index)));
   }
 
+  post(Mushroom: Mushroom): Observable<Mushroom> {
+    console.log("post");
+    return this.http.post<Mushroom>(this.apiUrl+"catalogue", Mushroom, this.httpOptions);
+  }
+
+  put(Mushroom: Mushroom): Observable<Mushroom> {
+    console.log("put");
+    return this.http.put<Mushroom>(this.apiUrl+"catalogue/"+Mushroom.id, Mushroom, this.httpOptions);
+  }
+
+  delete(Mushroom: Mushroom): Observable<Mushroom> {
+    console.log("delete");
+    return this.http.delete<Mushroom>(this.apiUrl+"catalogue/"+Mushroom.id);
+  }
+
   search(search: string): Observable<Mushroom[]> {
     if(search === ''){
-      return this.getCatalogue();
+      return this.getAll();
     }
     return this.http.get<Mushroom[]>(this.apiUrl+"catalogue/"+search, this.httpOptions)
   }

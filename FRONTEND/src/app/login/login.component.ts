@@ -21,11 +21,11 @@ export class LoginComponent {
   @Output() login = new EventEmitter<string>();
 
 
-  onSubmit() {
+  loginClient() {
     this.loginService.login(this.loginForm.value.pseudo, this.loginForm.value.password).subscribe(
       (data) => {
         this.isConnected = true;
-        console.log('loginComponent onSubmit',data['login']);
+        console.log('loginComponent login', data['login']);
         this.login.emit(data['login']);
       }
     );
