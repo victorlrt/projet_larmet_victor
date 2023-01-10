@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "tp07_larmet_victor": {
+    "projet_larmet_victor": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/tp07_larmet_victor",
+            "outputPath": "dist/projet_larmet_victor",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "tp07_larmet_victor:build:production"
+              "browserTarget": "projet_larmet_victor:build:production"
             },
             "development": {
-              "browserTarget": "tp07_larmet_victor:build:development"
+              "browserTarget": "projet_larmet_victor:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "tp07_larmet_victor:build"
+            "browserTarget": "projet_larmet_victor:build"
           }
         },
         "test": {

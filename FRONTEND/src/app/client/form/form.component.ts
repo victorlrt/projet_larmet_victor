@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Client } from 'src/app/core/model/client';
-import { ClientService } from '../client.service';
+import { ClientService } from '../../service/client/client.service';
 
 @Component({
   selector: 'app-component-form',

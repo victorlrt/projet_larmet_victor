@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { distinct, Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Mushroom } from '../core/model/mushroom';
+import { Mushroom } from '../../core/model/mushroom';
 import { map } from 'rxjs/internal/operators/map';
 import { environment } from 'src/environments/environment';
 

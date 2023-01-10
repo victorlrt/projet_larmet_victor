@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
 
+// ---- TEST ----
+
 @Injectable()
 export class SearchService {
   constructor(private http: HttpClient) {}

@@ -1,7 +1,7 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngxs/store';
-import { CatalogueService } from '../catalogue.service';
+import { CatalogueService } from '../../service/catalogue/catalogue.service';
 import { Mushroom } from '../../core/model/mushroom';
 import { AddMushroom } from 'src/app/core/model/store';
 

@@ -3,7 +3,7 @@ import { fromEvent, Observable, of, switchMap } from 'rxjs';
 import { Mushroom } from '../../core/model/mushroom';
 import { catchError, debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { CatalogueService } from '../catalogue.service';
+import { CatalogueService } from '../../service/catalogue/catalogue.service';
 import { DetailsCatalogueComponent } from '../details-catalogue/details-catalogue.component';
 
 @Component({

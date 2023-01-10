@@ -3,10 +3,10 @@ import { FormComponent } from './form/form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { CheckFormStringDirective } from '../directive/directive-string/check-form-string.directive';
-import { CheckFormNumberDirective } from '../directive/directive-number/check-form-number.directive';
-import { PipeFormatTelPipe } from '../pipe/pipe-format-tel.pipe';
-import { CheckFormEMailDirective } from '../directive/directive-email/check-form-email.directive';
+import { CheckFormStringDirective } from '../core/directive/directive-string/check-form-string.directive';
+import { CheckFormNumberDirective } from '../core/directive/directive-number/check-form-number.directive';
+import { PipeFormatTelPipe } from '../core/pipe/pipe-format-tel.pipe';
+import { CheckFormEMailDirective } from '../core/directive/directive-email/check-form-email.directive';
 import { RouterModule, Routes } from '@angular/router';
 import { SummaryComponent } from './summary/summary.component';
 

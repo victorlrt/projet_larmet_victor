@@ -1,3 +1,9 @@
+# Structure base de données
+
+## Table MUSHROOM
+### CREATE
+
+```sql
 CREATE table IF NOT EXISTS public.mushroom (
 	id SERIAL primary key ,
 	name varchar(50) unique not null,
@@ -7,8 +13,10 @@ CREATE table IF NOT EXISTS public.mushroom (
 	description text not null,
 	toxicity varchar(20) not null
 );
+```
 
-
+### INSERT
+```sql
 INSERT INTO public.mushroom(name,edible,poisonous,img,description,toxicity) VALUES ('Amanite tue-mouches','false','true','https://www.chasseursdechampignons.com/blog/wp-content/uploads/2022/06/Des-amanites-tue-mouche-Amanita-muscaria-en-groupe.jpg','Amanita muscaria, commonly known as the fly agaric or fly amanita, is a basidiomycete of the genus Amanita. It is also a muscimol mushroom. Native throughout the temperate and boreal regions of the Northern Hemisphere. Although poisonous, death due to poisoning from A. muscaria ingestion is quite rare. Parboiling twice with water draining weakens its toxicity and breaks down the mushroom''s psychoactive substances.','Lethal');
 INSERT INTO public.mushroom(name,edible,poisonous,img,description,toxicity) VALUES ('Amanite phalloïde','false','true','https://upload.wikimedia.org/wikipedia/commons/9/99/Amanita_phalloides_1.JPG','Amanite phalloïde is a poisonous mushroom that is found in Europe, North America, and Asia. It is one of the most toxic mushrooms in the world, and is responsible for many deaths. It is also known as the death cap, destroying angel, devil''s mushroom, or inedible amanita.','Lethal');
 INSERT INTO public.mushroom(name,edible,poisonous,img,description,toxicity) VALUES ('Amanite vireuse','false','true','https://upload.wikimedia.org/wikipedia/commons/8/81/Destroying_Angel_02.jpg','Amanite vireuse, commonly known in Europe as the destroying angel or the European destroying angel amanita (Amanita virosa), is a poisonous mushroom that is found in Europe, North America, and Asia. It is one of the most toxic mushrooms in the world, and is responsible for many deaths.','Lethal');
@@ -20,8 +28,12 @@ INSERT INTO public.mushroom(name,edible,poisonous,img,description,toxicity) VALU
 INSERT INTO public.mushroom(name,edible,poisonous,img,description,toxicity) VALUES ('Girollle','true','false','https://upload.wikimedia.org/wikipedia/commons/8/86/Cantharellus_cibarius1.jpg','Gyromitra esculenta is an ascomycete fungus from the genus Gyromitra, widely distributed across Europe and North America. It normally fruits in sandy soils under coniferous trees in spring and early summer.','None');
 INSERT INTO public.mushroom(name,edible,poisonous,img,description,toxicity) VALUES ('Pleurote','true','false','https://upload.wikimedia.org/wikipedia/commons/9/94/Oyster_mushoom_fells.jpg','Pleurote (Pleurotus ostreatus) is a mushroom that is found in Europe, North America, and Asia. It is one of the most toxic mushrooms in the world, and is responsible for many deaths. It is also known as the death cap, destroying angel, devil''s mushroom, or inedible amanita.','None');
 INSERT INTO public.mushroom(name,edible,poisonous,img,description,toxicity) VALUES ('Langue de boeuf','true','false','https://upload.wikimedia.org/wikipedia/commons/3/3f/2008-08-08_Fistulina_hepatica_crop.jpg','Fistulina hepatica is an unusual bracket fungus classified in the Agaricales, that is commonly seen in Britain, but can be found in other parts of the world. It is a saprobic fungus that grows on dead wood, and is often found on the trunks of trees.','None');
+```
 
 
+## Table CLIENT
+### CREATE
+```sql
 CREATE table IF NOT EXISTS public.client (
 	id SERIAL primary key ,
 	lastname varchar(20) not null,
@@ -34,7 +46,11 @@ CREATE table IF NOT EXISTS public.client (
 	"password" varchar(30) not null
 	
 );
+```
 
+### INSERT
+```sql
 INSERT INTO client
 (lastname, firstname, zipcode, tel, email, gender, login, password)
 VALUES('test', 'test', 'test', 'test', 'test', 'test', 'test', 'test');
+```

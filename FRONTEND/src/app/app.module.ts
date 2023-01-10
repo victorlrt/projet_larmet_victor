@@ -8,11 +8,11 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { StoreState } from './core/state/store-state';
-import { HeadersInterceptor } from './headers.interceptor';
-import { ClientService } from './client/client.service';
-import { CatalogueService } from './catalogue/catalogue.service';
+import { HeadersInterceptor } from './httpapi/headers.interceptor';
+import { ClientService } from './service/client/client.service';
+import { CatalogueService } from './service/catalogue/catalogue.service';
 import { LoginComponent } from './login/login.component';
-import { LoginService } from './login.service';
+import { LoginService } from './service/login/login.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxsModule } from '@ngxs/store';
 
